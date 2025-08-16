@@ -103,12 +103,31 @@ function openPublicationLightbox(index) {
     document.body.style.overflow = 'hidden';
 }
 
+// New function for comp card lightbox
+function openCompCardLightbox() {
+    currentImageSet = 'compcard';
+    document.getElementById('lightbox-img').src = 'compcard.png';
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    // Hide navigation arrows for comp card since it's a single image
+    const navElements = document.querySelectorAll('.lightbox-nav');
+    navElements.forEach(nav => nav.style.display = 'none');
+}
+
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
     document.body.style.overflow = 'auto';
+    
+    // Show navigation arrows again when closing
+    const navElements = document.querySelectorAll('.lightbox-nav');
+    navElements.forEach(nav => nav.style.display = 'block');
 }
 
 function changeSlide(n) {
+    // Don't allow navigation for comp card
+    if (currentImageSet === 'compcard') return;
+    
     const currentImages = currentImageSet === 'portfolio' ? portfolioImages : publicationImages;
     
     currentSlide += n;
