@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivves - Plus Size Model Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"><!-- Add this line -->
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full z-50 nav-transparent">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="logo text-black">Olivves</a>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#hero" class="text-black hover:text-taupe-500 transition">Home</a></li>
+                        <li><a href="#about" class="text-black hover:text-taupe-500 transition">About</a></li>
+                        <li><a href="#booking" class="text-black hover:text-taupe-500 transition">Booking</a></li>
+                        <li><a href="#publications" class="text-black hover:text-taupe-500 transition">Publications</a></li>
+                        <li><a href="#portfolio" class="text-black hover:text-taupe-500 transition">Portfolio</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden text-black focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-20">
+        <div class="container mx-auto px-6 py-4">
+            <ul class="space-y-6 text-center">
+                <li><a href="#hero" class="text-2xl text-black hover:text-taupe-500 block py-2">Home</a></li>
+                <li><a href="#about" class="text-2xl text-black hover:text-taupe-500 block py-2">About</a></li>
+                <li><a href="#booking" class="text-2xl text-black hover:text-taupe-500 block py-2">Booking</a></li>
+                <li><a href="#publications" class="text-2xl text-black hover:text-taupe-500 block py-2">Publications</a></li>
+                <li><a href="#portfolio" class="text-2xl text-black hover:text-taupe-500 block py-2">Portfolio</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+<section id="hero" class="relative h-screen flex items-center justify-center">
+    <div class="absolute inset-0 bg-black">
+        <img src="HERO.JPG" 
+             alt="Olivia modeling" 
+             class="w-full h-full object-cover opacity-90 object-[60%_center] sm:object-[60%_center] md:object-center">
+    </div>
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="hero-text text-5xl md:text-7xl font-bold text-white mb-4">Olivia</h1>
+            <p class="hero-text text-xl md:text-2xl text-white mb-8">Plus Size Model</p>
+            <p class="hero-text text-lg md:text-xl text-white italic">Curves. Confidence. Creativity.</p>
+        </div>
+        <a href="#about" class="scroll-down absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white text-3xl">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#F5E6E0] fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center about-content gap-12">
+                <div class="about-sidebar md:w-1/3 flex flex-col items-center md:items-start mb-10 md:mb-0">
+                    <div class="w-64 h-64 rounded-full overflow-hidden mb-6 shadow-lg border-4 border-[#C4A484] about-image-container cursor-pointer">
+                        <img src="ABOUTME.JPG" 
+                             alt="Olivia portrait" class="w-full h-full object-cover">
+                    </div>
+                    <div class="social-icons flex space-x-6 mb-6">
+                        <a href="https://instagram.com/olivves" target="_blank" class="text-black hover:text-[#C4A484] text-2xl transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@olivvesmodeling" target="_blank" class="text-black hover:text-[#C4A484] text-2xl transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:olivvesmodeling@gmail.com?subject=Booking" class="text-black hover:text-[#C4A484] text-2xl transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <a href="#booking" class="inline-block bg-[#C4A484] text-white font-bold px-6 py-3 rounded-full shadow hover:bg-black hover:text-[#C4A484] transition text-base">
+                        Book Me for Your Next Project
+                    </a>
+                </div>
+                <div class="about-text md:w-2/3 md:pl-10">
+                    <p class="text-2xl font-bold mb-4 text-[#C4A484]">Hey, I'm Olivia!</p>
+                    <p class="text-lg mb-4">
+                        Known professionally as Olivves, Olivia is a confident and captivating plus-size model celebrated for her curves and magnetic presence in front of the camera. With multiple publications—both nationally and internationally—she has established herself as a versatile and dynamic talent in the fashion world.
+                    </p>
+                    <p class="text-lg mb-4">
+                        Her journey into modeling began as a personal goal—to feel more comfortable in front of the camera for her wedding. After a couples shoot with her now-husband, Olivia discovered not only a newfound confidence but also a deep love for the art of modeling. What started as a single experience quickly became a passion, leading her to explore diverse styles and embrace her career with full dedication.
+                    </p>
+                    <p class="text-lg mb-4">
+                        Currently signed under a non-exclusive contract with Queen & King Models, Olivia brings passion, professionalism, and a fearless embrace of body positivity to every project. She thrives on creative shoots, where artistry and vision meet, and has built a strong portfolio that includes bridal modeling, runway appearances, and editorial spreads.
+                    </p>
+                    <p class="text-lg mb-4">
+                        Guided by her personal motto—Curves. Confidence. Creativity.—Olivia embodies the artistry and empowerment she brings to every collaboration, inspiring others to see beauty in all its forms.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-4 justify-center">
+                        <span class="inline-flex items-center bg-[#C4A484]/10 text-[#C4A484] px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-star mr-2"></i>Body Positive Advocate</span>
+                        <span class="inline-flex items-center bg-[#C4A484]/10 text-[#C4A484] px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-star mr-2"></i>Published Model</span>
+                        <span class="inline-flex items-center bg-[#C4A484]/10 text-[#C4A484] px-3 py-1 rounded-full text-sm font-semibold"><i class="fas fa-star mr-2"></i>Creative Collaborator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Booking Section -->
+<section id="booking" class="bg-white">
+    <!-- Title and Button - Desktop -->
+    <div class="hidden md:block text-center py-12 px-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-black mb-8">Booking Information</h2>
+        <button id="open-booking-modal-desktop" class="open-booking-btn inline-block bg-[#C4A484] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-[#C4A484] transition text-lg">
+            Request a Shoot
+        </button>
+    </div>
+    
+    <!-- Title and Button - Mobile -->
+    <div class="block md:hidden text-center py-8 px-6">
+        <h2 class="text-3xl font-bold text-black mb-6">Booking Information</h2>
+        <button id="open-booking-modal-mobile" class="open-booking-btn inline-block bg-[#C4A484] text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-white hover:text-[#C4A484] transition text-base">
+            Request a Shoot
+        </button>
+    </div>
+    
+    <!-- Slideshow -->
+    <div class="relative h-[35vh] md:h-screen">
+        <div class="booking-slideshow w-full h-[35vh] md:h-full">
+            <img src="S1.JPG" alt="Booking Slide 1" class="booking-slide active w-full h-[35vh] md:h-full object-contain md:object-cover">
+            <img src="S2.JPG" alt="Booking Slide 2" class="booking-slide w-full h-[35vh] md:h-full object-contain md:object-cover">
+            <img src="S3.JPG" alt="Booking Slide 3" class="booking-slide w-full h-[35vh] md:h-full object-contain md:object-cover">
+        </div>
+    </div>
+</section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-booking-modal" class="modal-close">&times;</button>
+            <h3 class="modal-title">Request a Shoot</h3>
+            <form id="booking-form" class="modal-form" autocomplete="off">
+                <label>
+                    Name
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Rate
+                    <select name="rate" required>
+                        <option value="">Select rate...</option>
+                        <option value="standard">Standard ($25/hr)</option>
+                        <option value="tfp">TFP Collaboration</option>
+                    </select>
+                </label>
+                <div class="modal-grid">
+                    <div>
+                        <h4>Measurements</h4>
+                        <label>Height <input type="text" name="height" placeholder="5'9&quot;"></label>
+                        <label>Bust <input type="text" name="bust" placeholder="45&quot;"></label>
+                        <label>Waist <input type="text" name="waist" placeholder="40&quot;"></label>
+                        <label>Hips <input type="text" name="hips" placeholder="48&quot;"></label>
+                        <label>Shoes <input type="text" name="shoes" placeholder="11"></label>
+                        <label>Dress <input type="text" name="dress" placeholder="1X (16-18)"></label>
+                    </div>
+                    <div>
+                        <h4>Appearance</h4>
+                        <label>Hair <input type="text" name="hair" placeholder="Dark Red"></label>
+                        <label>Eyes <input type="text" name="eyes" placeholder="Dark Brown"></label>
+                        <label>Skin <input type="text" name="skin" placeholder="Pale, Cool Undertones"></label>
+                    </div>
+                </div>
+                <label>
+                    Message
+                    <textarea name="message" rows="3" placeholder="Tell me about your project..." required></textarea>
+                </label>
+                <div class="modal-action">
+                    <button type="submit" class="booking-btn-main">Send Request</button>
+                </div>
+            </form>
+            <div id="booking-success" style="display:none; text-align:center; margin-top:20px;">
+                <p style="color:#4BB543;font-weight:bold;">Thank you! Your request has been sent.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-[#E5E5E5] fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Publications</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Publication 1 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P1.JPG" 
+                         alt="Mirror Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(1)">
+                    <h3 class="text-xl font-bold mb-1">Mirror Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Spring 2022</p>
+                </div>
+                <!-- Publication 2 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P2.JPG" 
+                         alt="Darkly Art Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(2)">
+                    <h3 class="text-xl font-bold mb-1">Darkly Art Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Fall 2021</p>
+                </div>
+                <!-- Publication 3 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P3.JPG" 
+                         alt="Vigour Cover" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(3)">
+                    <h3 class="text-xl font-bold mb-1">Vigour (Cover)</h3>
+                    <p class="text-sm text-gray-600 mb-2">Summer 2023</p>
+                </div>
+                <!-- Publication 4 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P4.JPG" 
+                         alt="Malvie International" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(4)">
+                    <h3 class="text-xl font-bold mb-1">Malvie (International)</h3>
+                    <p class="text-sm text-gray-600 mb-2">Winter 2022</p>
+                </div>
+                <!-- Publication 5 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P5.JPG" 
+                         alt="Penida International" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(5)">
+                    <h3 class="text-xl font-bold mb-1">Penida (International)</h3>
+                    <p class="text-sm text-gray-600 mb-2">Spring 2023</p>
+                </div>
+                <!-- Publication 6 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P6.JPG" 
+                         alt="Mirror Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(6)">
+                    <h3 class="text-xl font-bold mb-1">Mirror Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Fall 2022</p>
+                </div>
+                <!-- Publication 7 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P7.JPG" 
+                         alt="Mirror Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(7)">
+                    <h3 class="text-xl font-bold mb-1">Mirror Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Fall 2022</p>
+                </div>
+                <!-- Publication 8 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P8.JPG" 
+                         alt="Mirror Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(8)">
+                    <h3 class="text-xl font-bold mb-1">Mirror Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Fall 2022</p>
+                </div>
+                <!-- Publication 9 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P9.JPG" 
+                         alt="Mirror Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(9)">
+                    <h3 class="text-xl font-bold mb-1">Mirror Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Fall 2022</p>
+                </div>
+                <!-- Publication 10 -->
+                <div class="publication-item bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <img src="P10.JPG" 
+                         alt="Mirror Magazine" class="w-full h-56 object-contain rounded-lg mb-4 cursor-pointer hover:opacity-80 transition" onclick="openPublicationLightbox(10)">
+                    <h3 class="text-xl font-bold mb-1">Mirror Magazine</h3>
+                    <p class="text-sm text-gray-600 mb-2">Fall 2022</p>
+                </div>
+            </div>
+            <div class="publications-see-more">
+                <a href="https://instagram.com/olivves" target="_blank" rel="noopener">
+                    See more
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white fade-in">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(1)">
+                    <img src="PO1.JPG" 
+                         alt="Olivia portfolio image" class="w-full h-80 object-contain transition duration-500 group-hover:scale-105">
+                </div>
+                <!-- Portfolio Item 2 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(2)">
+                    <img src="PO2.JPG" 
+                         alt="Olivia portfolio image" class="w-full h-80 object-contain transition duration-500 group-hover:scale-105">
+                </div>
+                <!-- Portfolio Item 3 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(3)">
+                    <img src="PO3.JPG" 
+                         alt="Olivia portfolio image" class="w-full h-80 object-contain transition duration-500 group-hover:scale-105">
+                </div>
+                <!-- Portfolio Item 4 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(4)">
+                    <img src="PO4.JPG"  
+                         alt="Olivia portfolio image" class="w-full h-80 object-contain transition duration-500 group-hover:scale-105">
+                </div>
+                <!-- Portfolio Item 5 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(5)">
+                    <img src="PO5.JPG" 
+                         alt="Olivia portfolio image" class="w-full h-80 object-contain transition duration-500 group-hover:scale-105">
+                </div>
+                <!-- Portfolio Item 6 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(6)">
+                    <img src="PO6.JPG" 
+                         alt="Olivia portfolio image" class="w-full h-80 object-contain transition duration-500 group-hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-nav">
+            <span class="lightbox-prev" onclick="changeSlide(-1)">&#10094;</span>
+            <span class="lightbox-next" onclick="changeSlide(1)">&#10095;</span>
+        </div>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="logo text-2xl mb-4 text-center sm:text-left">Olivves</h2>
+                    <p class="text-sm">&copy; 2023 Olivia Modeling. All rights reserved.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="social-icons flex space-x-6 mb-4">
+                        <a href="https://instagram.com/olivves" target="_blank" class="text-white hover:text-[#C4A484] text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@olivvesmodeling" target="_blank" class="text-white hover:text-[#C4A484] text-xl">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:olivvesmodeling@gmail.com?subject=Booking" class="text-white hover:text-[#C4A484] text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm">olivvesmodeling@gmail.com</p>
+                    <p class="text-sm">Built by <a href="https://thefreewebsitewizards.com" target="_blank">The Free Website Wizards</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script><!-- Add this line -->
+</body>
+</html>

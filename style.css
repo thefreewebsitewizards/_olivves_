@@ -1,0 +1,995 @@
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --taupe: #C4A484;
+    --blush: #F5E6E0;
+    --gray: #E5E5E5;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--black);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-text {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-down {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -8px;
+    left: 25%;
+    background-color: var(--taupe);
+}
+
+.booking-btn {
+    transition: all 0.3s ease;
+}
+
+.booking-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-transparent {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nav-solid {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.lightbox-nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.lightbox-prev, .lightbox-next {
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 50%;
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+/* --- Modern Minimalist Modal --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18);
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 18px;
+    max-width: 420px;
+    width: 92vw;
+    padding: 36px 24px 24px 24px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    animation: fadeIn 0.3s;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #C4A484;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+.modal-close:hover { color: #000; }
+.modal-title {
+    font-size: 1.5rem;
+    color: #C4A484;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+.modal-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #C4A484;
+    font-size: 1rem;
+}
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+    width: 100%;
+    padding: 9px 12px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    border: 1px solid #E5E5E5;
+    font-size: 1rem;
+    background: #F5E6E0;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border 0.2s;
+}
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+    border: 1.5px solid #C4A484;
+    outline: none;
+}
+.modal-form textarea { resize: vertical; }
+.modal-form .modal-action {
+    margin-top: 18px;
+}
+.modal-grid {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modal-grid > div {
+    flex: 1 1 140px;
+    min-width: 140px;
+    background: #F5E6E0;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+.modal-grid h4 {
+    color: #C4A484;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+#booking-success p {
+    color: #4BB543;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+@media (max-width: 900px) {
+    .carousel-container, .carousel-images img { height: 40vh; }
+    .booking-section .section-title { font-size: 1.3rem; }
+}
+@media (max-width: 700px) {
+    .modal-grid { flex-direction: column; gap: 10px; }
+    .modal-content { padding: 18px 4vw 12px 4vw; }
+    .carousel-container, .carousel-images img { height: 28vh; }
+    .booking-section .section-title {
+        font-size: 1.2rem;
+        padding: 10px 16px 8px 16px;
+        min-width: 0;
+        max-width: 98vw;
+    }
+}
+@media (max-width: 600px) {
+    .booking-section .section-title { font-size: 1rem; padding: 5px 10px; }
+    .booking-btn-wrapper {
+        bottom: 10px;
+        padding: 0;
+        border-radius: 16px;
+    }
+    .booking-btn-main {
+        font-size: 1rem;
+        padding: 12px 18vw;
+    }
+}
+
+/* Booking Modal (minimalist, modern) */
+#booking-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+#booking-modal .modal-content {
+    background: #fff;
+    border-radius: 18px;
+    max-width: 600px; /* Increased from 420px for desktop */
+    width: 95vw; /* Increased from 92vw for better mobile coverage */
+    padding: 36px 24px 24px 24px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+    animation: fadeIn 0.3s;
+    max-height: 90vh; /* Reduced from 92vh for better mobile spacing */
+    overflow-y: auto;
+}
+
+/* Desktop specific styling */
+@media (min-width: 768px) {
+    #booking-modal .modal-content {
+        max-width: 700px; /* Even wider for desktop */
+        width: 80vw;
+        padding: 48px 36px 36px 36px;
+    }
+}
+
+/* Large desktop styling */
+@media (min-width: 1024px) {
+    #booking-modal .modal-content {
+        max-width: 800px;
+        width: 70vw;
+    }
+}
+
+#booking-modal .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #C4A484;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+    z-index: 10;
+}
+
+#booking-modal .modal-close:hover {
+    color: #000;
+}
+
+#booking-modal .modal-title {
+    font-size: 1.5rem;
+    color: #C4A484;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+/* Desktop title sizing */
+@media (min-width: 768px) {
+    #booking-modal .modal-title {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+}
+
+#booking-modal .modal-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #C4A484;
+    font-size: 1rem;
+}
+
+#booking-modal .modal-form input,
+#booking-modal .modal-form select,
+#booking-modal .modal-form textarea {
+    width: 100%;
+    padding: 12px 16px; /* Increased padding */
+    margin-top: 4px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    border: 1px solid #E5E5E5;
+    font-size: 1rem;
+    background: #F5E6E0;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border 0.2s;
+}
+
+#booking-modal .modal-form input:focus,
+#booking-modal .modal-form select:focus,
+#booking-modal .modal-form textarea:focus {
+    border: 1.5px solid #C4A484;
+    outline: none;
+    background: #fff;
+}
+
+#booking-modal .modal-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#booking-modal .modal-form .modal-action {
+    margin-top: 24px;
+    text-align: center;
+}
+
+/* Fixed booking button styling */
+.booking-btn-main {
+    background: #C4A484;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.booking-btn-main:hover {
+    background: #000;
+    color: #C4A484;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(196, 164, 132, 0.3);
+}
+
+.booking-btn-main:active {
+    transform: translateY(0);
+}
+
+/* Desktop button styling */
+@media (min-width: 768px) {
+    .booking-btn-main {
+        padding: 16px 40px;
+        font-size: 1.2rem;
+        max-width: 350px;
+    }
+}
+
+#booking-modal .modal-grid {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Mobile grid layout */
+@media (max-width: 767px) {
+    #booking-modal .modal-grid {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    #booking-modal .modal-content {
+        padding: 24px 16px 16px 16px;
+        margin: 10px;
+        width: calc(100vw - 20px);
+        max-height: 85vh;
+    }
+    
+    #booking-modal .modal-close {
+        top: 12px;
+        right: 16px;
+        font-size: 1.8rem;
+    }
+}
+
+#booking-modal .modal-grid > div {
+    flex: 1 1 140px;
+    min-width: 140px;
+    background: #F5E6E0;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+/* Desktop grid styling */
+@media (min-width: 768px) {
+    #booking-modal .modal-grid > div {
+        padding: 20px;
+        min-width: 200px;
+    }
+}
+
+#booking-modal .modal-grid h4 {
+    color: #C4A484;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+#booking-success {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#booking-success p {
+    color: #4BB543;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Remove old conflicting styles */
+@media (max-width: 600px) {
+    .booking-btn-main {
+        font-size: 1.1rem;
+        padding: 14px 24px;
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Center About, Publications, Portfolio sections */
+#about .container,
+#publications .container,
+#portfolio .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .about-content,
+#publications .grid,
+#portfolio .grid {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#about .about-text,
+#about .about-sidebar {
+    align-items: center;
+    text-align: center;
+}
+
+#publications .publication-item,
+#portfolio .gallery-item {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center only the Publications section title, not the cards */
+#publications .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#publications .grid {
+    justify-content: unset;
+    align-items: unset;
+    text-align: left;
+}
+
+#publications .publication-item {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* See More IG button for Publications */
+.publications-see-more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.publications-see-more a {
+    display: inline-flex;
+    align-items: center;
+    background: #C4A484;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 10px 22px 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s, color 0.2s;
+    gap: 8px;
+}
+
+.publications-see-more a:hover {
+    background: #222;
+    color: #C4A484;
+}
+
+.publications-see-more i {
+    font-size: 1.2em;
+    margin-left: 6px;
+}
+
+/* Feature link style */
+.text-[#C4A484] {
+    color: #C4A484;
+}
+
+.text-[#C4A484]:hover {
+    text-decoration: underline;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox style */
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 28px;
+    user-select: none;
+}
+
+/* Hidden checkbox input */
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Custom checkbox box */
+.custom-checkbox .checkbox-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C4A484;
+    border-radius: 4px;
+    background: #fff;
+    transition: background 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+/* Checkmark for the custom checkbox */
+.custom-checkbox .checkbox-check {
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    width: 8px;
+    height: 4px;
+    border: solid #C4A484;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Checked state styles */
+.custom-checkbox.checked .checkbox-box {
+    background: #C4A484;
+    border-color: #C4A484;
+}
+
+.custom-checkbox.checked .checkbox-check {
+    opacity: 1;
+}
+
+/* Radio button styles */
+input[type="radio"] {
+    display: none;
+}
+
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 28px;
+    user-select: none;
+}
+
+.custom-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #C4A484;
+    border-radius: 50%;
+    background: #fff;
+    transition: background 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.radio-inner {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #C4A484;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s;
+}
+
+/* Checked state styles for radio */
+.custom-radio.checked .radio-dot {
+    background: #C4A484;
+    border-color: #C4A484;
+}
+
+.custom-radio.checked .radio-inner {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Range slider styles */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #E5E5E5;
+    border-radius: 2px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #C4A484;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #C4A484;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Textarea autosize */
+textarea {
+    overflow: hidden;
+    resize: none;
+}
+
+textarea.auto-expand {
+    height: auto;
+    min-height: 60px;
+    max-height: 300px;
+}
+
+/* Smooth scroll for Safari */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hide the default spinner on number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Custom styles for the file input */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #C4A484;
+    border-radius: 4px;
+    background: #fff;
+    color: #C4A484;
+    transition: background 0.3s, color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background: #C4A484;
+    color: #fff;
+}
+
+/* Loader styles */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #C4A484;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Toast notification styles */
+.toast {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Media queries for responsive typography */
+@media (max-width: 1200px) {
+    :root {
+        --font-size-base: 14px;
+        --font-size-lg: 18px;
+        --font-size-xl: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --font-size-base: 13px;
+        --font-size-lg: 17px;
+        --font-size-xl: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 12px;
+        --font-size-lg: 16px;
+        --font-size-xl: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --font-size-base: 11px;
+        --font-size-lg: 15px;
+        --font-size-xl: 18px;
+    }
+}
+
+#publications .section-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    box-shadow: none;
+}
+
+#publications .section-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -8px;
+    left: 25%;
+    background-color: var(--taupe);
+}
+
+/* Publications grid: 5 per row, 10 items max */
+#publications .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#publications .publication-item {
+    margin: 0;
+}
+
+/* Responsive: 3 per row on tablets, 1-2 per row on mobile */
+@media (max-width: 1200px) {
+    #publications .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 800px) {
+    #publications .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    #publications .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* About me div container animations */
+.about-image-container {
+    transition: transform 0.5s ease-in-out;
+    animation: breathe 3s ease-in-out infinite;
+}
+
+.about-image-container:hover {
+    transform: scale(1.1);
+    animation-play-state: paused;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Booking section slideshow */
+.booking-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.booking-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hide all slides */
+    transition: opacity 1s ease-in-out;
+    z-index: 0; /* Default z-index */
+}
+
+.booking-slide.active {
+    opacity: 0.9; /* Only the active slide will be visible */
+    z-index: 1; /* Make sure the active slide is on top */
+}
+
+/* Remove old booking section styles */
+.booking-section {
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.carousel-container,
+.carousel-btn,
+.carousel-images,
+.booking-btn-wrapper {
+    display: none;
+}
