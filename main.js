@@ -69,11 +69,36 @@ const portfolioImages = [
     "PO6.JPG"
 ];
 
+// Publication images array
+const publicationImages = [
+    "P1.JPG",
+    "P2.JPG",
+    "P3.JPG",
+    "P4.JPG",
+    "P5.JPG",
+    "P6.JPG",
+    "P7.JPG",
+    "P8.JPG",
+    "P9.JPG",
+    "P10.JPG"
+];
+
 let currentSlide = 0;
+let currentImageSet = 'portfolio'; // Track which image set is currently active
 
 function openLightbox(index) {
     currentSlide = index - 1;
+    currentImageSet = 'portfolio';
     document.getElementById('lightbox-img').src = portfolioImages[currentSlide];
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// New function for publication lightbox
+function openPublicationLightbox(index) {
+    currentSlide = index - 1;
+    currentImageSet = 'publication';
+    document.getElementById('lightbox-img').src = publicationImages[currentSlide];
     document.getElementById('lightbox').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
@@ -84,15 +109,17 @@ function closeLightbox() {
 }
 
 function changeSlide(n) {
+    const currentImages = currentImageSet === 'portfolio' ? portfolioImages : publicationImages;
+    
     currentSlide += n;
     
-    if (currentSlide >= portfolioImages.length) {
+    if (currentSlide >= currentImages.length) {
         currentSlide = 0;
     } else if (currentSlide < 0) {
-        currentSlide = portfolioImages.length - 1;
+        currentSlide = currentImages.length - 1;
     }
     
-    document.getElementById('lightbox-img').src = portfolioImages[currentSlide];
+    document.getElementById('lightbox-img').src = currentImages[currentSlide];
 }
 
 // Close lightbox when clicking outside the image
